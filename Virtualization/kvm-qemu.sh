@@ -260,6 +260,7 @@ function install_libguestfs() {
     cd /opt || return
     if [ ! -d guestfs-tools ]; then
       git clone --recursive https://github.com/rwmjones/guestfs-tools.git
+      cd guestfs-tools
       git fetch --depth=1 origin ${LIBGUESTFS_TOOLS_GITHUB_SHA}
       git checkout ${LIBGUESTFS_TOOLS_GITHUB_SHA}
     fi
