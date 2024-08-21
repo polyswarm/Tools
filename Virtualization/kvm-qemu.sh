@@ -263,6 +263,7 @@ function install_libguestfs() {
       cd guestfs-tools
       git fetch --depth=1 origin ${LIBGUESTFS_TOOLS_GITHUB_SHA}
       git checkout ${LIBGUESTFS_TOOLS_GITHUB_SHA}
+      cd ../
     fi
     cd guestfs-tools || return
     # Following tips to compile the guestfs-tools as depicted in https://www.mail-archive.com/libguestfs@redhat.com/msg22408.html
