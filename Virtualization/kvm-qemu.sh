@@ -1,5 +1,4 @@
 #!/bin/bash
-set -ex
 
 # Copyright (C) 2011-2023 DoomedRaven.
 # This file is part of Tools - https://github.com/doomedraven/Tools
