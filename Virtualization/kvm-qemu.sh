@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 # Copyright (C) 2011-2023 DoomedRaven.
 # This file is part of Tools - https://github.com/doomedraven/Tools
@@ -252,7 +253,8 @@ function install_libguestfs() {
     git submodule update --init
     autoreconf -i
     ./configure CFLAGS=-fPIC
-    make -j"$(nproc)"
+    make -j"$(nproc)" || true
+    libguestfs-test-tool
 
     # Install virt tools that are in a diff repo since LIBGUESTFS 1.46 split
     # More Info: https://listman.redhat.com/archives/libguestfs/2021-September/msg00153.html
