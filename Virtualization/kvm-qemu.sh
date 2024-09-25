@@ -253,7 +253,7 @@ function install_libguestfs() {
     git submodule update --init
     autoreconf -i
     ./configure CFLAGS=-fPIC
-    make -j"$(nproc)" || true
+    make -j"$(nproc)" common generator binaries blank-disks phony-guests files
 
     # Install virt tools that are in a diff repo since LIBGUESTFS 1.46 split
     # More Info: https://listman.redhat.com/archives/libguestfs/2021-September/msg00153.html
