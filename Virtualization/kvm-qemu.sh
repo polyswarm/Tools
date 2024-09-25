@@ -253,7 +253,7 @@ function install_libguestfs() {
     git submodule update --init
     autoreconf -i
     ./configure CFLAGS=-fPIC
-    make -j"$(nproc)" common generator binaries blank-disks phony-guests files
+    make -j"$(nproc)" common/mlstdutils generator gnulib/lib common/errnostring common/protocol common/qemuopts common/utils common/structs include lib docs examples common/mlutils common/mlpcre daemon common/edit common/options common/parallel common/progress common/visit common/windows fish rescue bash csharp po
 
     # Install virt tools that are in a diff repo since LIBGUESTFS 1.46 split
     # More Info: https://listman.redhat.com/archives/libguestfs/2021-September/msg00153.html
