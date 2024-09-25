@@ -223,7 +223,7 @@ function install_libguestfs() {
     curl -1sLf "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf77f1eda57ebb1cc" | sudo gpg --dearmor | sudo tee /usr/share/keyrings/net.launchpad.ppa.rabbitmq.erlang.gpg > /dev/null
     echo 'deb [signed-by=/usr/share/keyrings/net.launchpad.ppa.rabbitmq.erlang.gpg] http://ppa.launchpad.net/rabbitmq/rabbitmq-erlang/ubuntu focal main' > /etc/apt/sources.list.d/erlang.list
     echo 'deb-src [signed-by=/usr/share/keyrings/net.launchpad.ppa.rabbitmq.erlang.gpg] http://ppa.launchpad.net/rabbitmq/rabbitmq-erlang/ubuntu focal main' >> /etc/apt/sources.list.d/erlang.list
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq -f apt-transport-https parted libyara8 erlang-dev gperf flex bison libaugeas-dev libhivex-dev supermin ocaml-nox libhivex-ocaml genisoimage libhivex-ocaml-dev libmagic-dev libjansson-dev gnulib jq ocaml-findlib -y
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq -f ocaml-guestfs apt-transport-https parted libyara8 erlang-dev gperf flex bison libaugeas-dev libhivex-dev supermin ocaml-nox libhivex-ocaml genisoimage libhivex-ocaml-dev libmagic-dev libjansson-dev gnulib jq ocaml-findlib -y
     sudo apt update
     sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq -f erlang -y
 
