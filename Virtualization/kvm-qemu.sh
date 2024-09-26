@@ -268,7 +268,8 @@ function install_libguestfs() {
     cd guestfs-tools || return
     # Following tips to compile the guestfs-tools as depicted in https://www.mail-archive.com/libguestfs@redhat.com/msg22408.html
     git submodule update --init --force
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq libguestfs-ocaml libguestfs0-
+    sudo DEBIAN_FRONTEND=noninteractive apt-get download -yq libguestfs-ocaml ocaml-base
+    sudo dpkg -i --ignore-depends=libguestfs0 ./ocaml-base* ./libguestfs-ocaml*
     autoreconf -i
     ../libguestfs/run ./configure CFLAGS=-fPIC
     ../libguestfs/run make -j $(getconf _NPROCESSORS_ONLN)
