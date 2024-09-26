@@ -253,7 +253,7 @@ function install_libguestfs() {
     git submodule update --init
     autoreconf -i
     ./configure CFLAGS=-fPIC
-    make -j"$(nproc)" /opt/libguestfs/common/mlstdutils /opt/libguestfs/generator /opt/libguestfs/gnulib/lib /opt/libguestfs/common/errnostring /opt/libguestfs/protocol /opt/libguestfs/common/protocol /opt/libguestfs/common/qemuopts /opt/libguestfs/common/utils /opt/libguestfs/common/structs /opt/libguestfs/include /opt/libguestfs/lib /opt/libguestfs/docs /opt/libguestfs/examples /opt/libguestfs/common/mlutils /opt/libguestfs/common/mlpcre /opt/libguestfs/daemon /opt/libguestfs/appliance /opt/libguestfs/common/edit /opt/libguestfs/common/options /opt/libguestfs/common/parallel /opt/libguestfs/common/progress /opt/libguestfs/common/visit /opt/libguestfs/common/windows /opt/libguestfs/fish /opt/libguestfs/rescue /opt/libguestfs/bash /opt/libguestfs/ocaml /opt/libguestfs/python /opt/libguestfs/python/examples /opt/libguestfs/java /opt/libguestfs/haskell /opt/libguestfs/erlang /opt/libguestfs/gobject /opt/libguestfs/csharp /opt/libguestfs/po /opt/libguestfs/
+    make -j"$(nproc)" common/mlstdutils generator gnulib/lib common/errnostring common/protocol common/qemuopts common/utils common/structs guestfs/include lib docs common/mlutils common/mlpcre daemon appliance common/edit common/options common/parallel common/progress common/visit common/windows fish rescue bash ocaml python python/examples java haskell erlang gobject csharp po
 
     # Install virt tools that are in a diff repo since LIBGUESTFS 1.46 split
     # More Info: https://listman.redhat.com/archives/libguestfs/2021-September/msg00153.html
